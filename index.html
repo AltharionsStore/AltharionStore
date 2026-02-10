@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altharion Store - Marketplace Item Game</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <h1>Altharion Store</h1>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-section="shop">Shop</a></li>
+                        <li><a href="#" class="nav-link" data-section="service">Service</a></li>
+                        <li><a href="#" class="nav-link" data-section="rules">Rules</a></li>
+                        <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+                    </ul>
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h2>Selamat Datang di <span class="highlight">Altharion Store</span></h2>
+                <p>Marketplace item & akun game terpercaya • Transaksi aman dengan midman • Fast response 24/7</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary" data-section="shop">Lihat Produk <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-secondary" data-section="contact">Konsultasi <i class="fas fa-headset"></i></a>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>100% Aman</h3>
+                    <p>Transaksi dengan midman terpercaya</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Response</h3>
+                    <p>Respon cepat 24/7</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>500+ Pelanggan</h3>
+                    <p>Sudah dipercaya banyak gamers</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop" class="section">
+            <div class="section-header">
+                <h2>Shop Produk</h2>
+                <p>Temukan item dan akun game yang Anda cari</p>
+            </div>
+
+            <!-- Filter Categories -->
+            <div class="filter-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Semua Produk</button>
+                    <button class="filter-btn" data-filter="game">Akun Game</button>
+                    <button class="filter-btn" data-filter="item">Item Game</button>
+                    <button class="filter-btn" data-filter="jasa">Jasa Gaming</button>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Cari produk...">
+                </div>
+            </div>
+
+            <!-- Products Container -->
+            <div class="products-container" id="productsContainer">
+                <!-- Products will be loaded here via JavaScript -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Memuat produk...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section -->
+        <section id="service" class="section">
+            <div class="section-header">
+                <h2>Layanan Kami</h2>
+                <p>Berbagai layanan untuk kebutuhan gaming Anda</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Midman Transaksi</h3>
+                    <p>Jasa perantara transaksi untuk menjamin keamanan pembeli dan penjual.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Jual/Beli Item</h3>
+                    <p>Marketplace untuk jual beli item dan akun game dengan harga kompetitif.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Processing</h3>
+                    <p>Proses cepat setelah pembayaran dikonfirmasi, hanya hitungan menit.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Konsultasi Gaming</h3>
+                    <p>Bantuan memilih produk yang sesuai kebutuhan dan budget Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules" class="section">
+            <div class="section-header">
+                <h2>Peraturan Toko</h2>
+                <p>Harap baca dan patuhi peraturan berikut</p>
+            </div>
+
+            <div class="rules-container">
+                <div class="rule-card">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Penting!</h3>
+                    <ul>
+                        <li>Gunakan midman untuk transaksi di atas Rp 300.000</li>
+                        <li>Item digital tidak ada refund setelah dikirim</li>
+                        <li>Deal = setuju dengan syarat dan harga</li>
+                        <li>Boleh nego asal sopan dan realistis</li>
+                    </ul>
+                </div>
+                <div class="rule-card">
+                    <h3><i class="fas fa-shield-alt"></i> Keamanan</h3>
+                    <ul>
+                        <li>Jangan berikan password sebelum deal</li>
+                        <li>Simpan bukti transfer dan chat</li>
+                        <li>Pastikan nomor WhatsApp valid</li>
+                        <li>Laporkan jika ada penipuan</li>
+                    </ul>
+                </div>
+                <div class="rule-card">
+                    <h3><i class="fas fa-clock"></i> Waktu</h3>
+                    <ul>
+                        <li>Respon admin: 10.00 - 22.00 WIB</li>
+                        <li>Proses setelah pembayaran: 5-30 menit</li>
+                        <li>Konfirmasi pembayaran: 1-5 menit</li>
+                        <li>Waktu tunggu maksimal: 1x24 jam</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2>Hubungi Kami</h2>
+                <p>Tim Altharion siap membantu Anda</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>Midman Resmi</h3>
+                    <p>+6281234567890</p>
+                    <a href="https://wa.me/6281234567890" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Admin Toko</h3>
+                    <p>@altharion_admin</p>
+                    <a href="https://t.me/altharion_admin" class="btn btn-telegram" target="_blank">
+                        <i class="fab fa-telegram"></i> Chat via Telegram
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Jam Operasional</h3>
+                    <p>10.00 - 22.00 WIB</p>
+                    <p>Setiap Hari</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Altharion Store</h3>
+                    <p>Marketplace item & akun game terpercaya</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-section="home">Home</a>
+                    <a href="#" data-section="shop">Shop</a>
+                    <a href="#" data-section="service">Service</a>
+                    <a href="#" data-section="rules">Rules</a>
+                    <a href="#" data-section="contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Altharion Store. Semua hak dilindungi.</p>
+                <p class="disclaimer">Website ini dibuat untuk keperluan statis. Produk dan kontak hanya contoh.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+</body>
+</html>
