@@ -1,71 +1,31 @@
-// ===== ANIME STYLE SCRIPT ENHANCEMENTS =====
+fetch("products.json")
+  .then(res => res.json())
+  .then(data => {
+    const featured = document.getElementById("featuredProducts");
+    const random = document.getElementById("randomProducts");
 
-// Security enhancements - disable right-click and developer tools
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    showAnimeNotification('🚫 Security feature enabled');
-});
-
-// Disable common developer tool shortcuts
-document.addEventListener('keydown', function(e) {
-    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-    if (e.key === 'F12' || 
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
-        (e.ctrlKey && e.key === 'u')) {
-        e.preventDefault();
-        showAnimeNotification('🔒 Developer tools disabled');
-    }
-});
-
-// ===== ANIME NOTIFICATION SYSTEM =====
-function showAnimeNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'anime-notification';
-    notification.innerHTML = `
-        <div class="notification-content">
-            <div class="notification-icon">⚡</div>
-            <div class="notification-text">${message}</div>
+    data.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "product";
+      card.innerHTML = `
+        <img src="${p.image}">
+        <h4>${p.title}</h4>
+        <p>${p.desc}</p>
+        <div class="actions">
+          <a class="chat" href="https://wa.me/${p.seller}">Chat</a>
+          <a class="midman" href="https://wa.me/6283895335264">Midman</a>
         </div>
-    `;
-    
-    // Add styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .anime-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--neon-pink));
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            z-index: 10000;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 20px rgba(255, 51, 102, 0.5);
-            animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 2.7s forwards;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes slideOutRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-        
-        .notification-content {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
+      `;
+
+      p.featured ? featured.appendChild(card) : random.appendChild(card);
+    });
+  });
+
+document.getElementById("gameMenuBtn").onclick = () =>
+  document.getElementById("gameMenu").style.display = "block";
+
+document.getElementById("mainMenuBtn").onclick = () =>
+  document.getElementById("mainMenu").style.display = "block";        
         .notification-icon {
             font-size: 1.5rem;
             animation: pulse 1s infinite;
