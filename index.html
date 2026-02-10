@@ -1,116 +1,72 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 Altharion Store - Anime Game Marketplace</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  <meta charset="UTF-8" />
+  <title>Altharion Store - Marketplace Item Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Anime Background Elements -->
-    <div class="anime-bg">
-        <div class="floating-symbol">⚡</div>
-        <div class="floating-symbol">🎮</div>
-        <div class="floating-symbol">🛡️</div>
-        <div class="floating-symbol">⚔️</div>
-        <div class="floating-symbol">🎯</div>
-    </div>
 
-    <!-- Neon Glow Container -->
-    <div class="neon-border"></div>
+<header class="header">
+  <div class="left">
+    <div class="logo">AS👑</div>
+    <button id="gameMenuBtn">🎮</button>
+  </div>
 
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-bolt"></i>
-                        <div class="logo-sparkle"></div>
-                    </div>
-                    <div class="logo-text">
-                        <h1 class="logo-main">ALTHARION</h1>
-                        <p class="logo-sub">ANIME GAME STORE</p>
-                    </div>
-                </div>
-                
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="#" class="nav-link active" data-section="home">
-                            <i class="fas fa-home"></i> <span>HOME</span>
-                        </a></li>
-                        <li><a href="#" class="nav-link" data-section="shop">
-                            <i class="fas fa-store"></i> <span>SHOP</span>
-                        </a></li>
-                        <li><a href="#" class="nav-link" data-section="service">
-                            <i class="fas fa-cogs"></i> <span>SERVICE</span>
-                        </a></li>
-                        <li><a href="#" class="nav-link" data-section="rules">
-                            <i class="fas fa-scroll"></i> <span>RULES</span>
-                        </a></li>
-                        <li><a href="#" class="nav-link" data-section="contact">
-                            <i class="fas fa-headset"></i> <span>CONTACT</span>
-                        </a></li>
-                        <li class="nav-highlight">
-                            <a href="#" class="btn-nav-pulse" data-section="shop">
-                                <i class="fas fa-bolt"></i> SHOP NOW
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <button class="menu-toggle anime-btn" id="menuToggle">
-                        <span class="bar bar1"></span>
-                        <span class="bar bar2"></span>
-                        <span class="bar bar3"></span>
-                    </button>
-                </nav>
-            </div>
-        </div>
-    </header>
+  <div class="right">
+    <button id="mainMenuBtn">☰</button>
+  </div>
+</header>
 
-    <!-- Main Content -->
-    <main class="container">
-        <!-- Home Section -->
-        <section id="home" class="section active">
-            <div class="hero anime-slide-up">
-                <div class="hero-badge">
-                    <span class="badge-pulse">🔥 HOT DEALS</span>
-                    <span class="badge-pulse">⚡ INSTANT DELIVERY</span>
-                </div>
-                
-                <h2 class="hero-title anime-text-gradient">
-                    <span class="hero-title-main">UPGRADE YOUR</span>
-                    <span class="hero-title-sub">GAMING EXPERIENCE</span>
-                </h2>
-                
-                <p class="hero-desc">
-                    Premium <span class="text-highlight">Anime Game Accounts</span> • 
-                    <span class="text-highlight">Rare Items</span> • 
-                    <span class="text-highlight">Fast & Secure</span> Delivery
-                </p>
-                
-                <div class="hero-stats">
-                    <div class="stat-card anime-float">
-                        <div class="stat-icon">🎯</div>
-                        <div class="stat-number" data-count="1500">0</div>
-                        <div class="stat-label">Items Sold</div>
-                    </div>
-                    <div class="stat-card anime-float" style="animation-delay: 0.2s">
-                        <div class="stat-icon">⭐</div>
-                        <div class="stat-number" data-count="98">0</div>
-                        <div class="stat-label">Positive Rating</div>
-                    </div>
-                    <div class="stat-card anime-float" style="animation-delay: 0.4s">
-                        <div class="stat-icon">⚡</div>
-                        <div class="stat-number" data-count="15">0</div>
-                        <div class="stat-label">Min Delivery</div>
-                    </div>
-                </div>
-                
-                <div class="hero-cta">
+<!-- MENU GAME -->
+<nav id="gameMenu" class="side-menu">
+  <h3>Kategori</h3>
+  <p><b>Koin & Item</b></p>
+  <ul>
+    <li>Heartwood Online</li>
+    <li>The World of Magic</li>
+    <li>Rucoy Online</li>
+    <li>Curse of Aros</li>
+    <li>Roblox</li>
+  </ul>
+
+  <p><b>Akun</b></p>
+  <p><b>Joki</b></p>
+</nav>
+
+<!-- MENU UTAMA -->
+<nav id="mainMenu" class="side-menu right-menu">
+  <ul>
+    <li>Home</li>
+    <li>Rules</li>
+    <li>Contact & Bantuan</li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <h1>Altharion Store</h1>
+    <p>Marketplace item & akun game terpercaya dengan midman</p>
+    <small>📞 Midman: +6283895335264</small>
+  </section>
+
+  <!-- PRODUK UTAMA -->
+  <section>
+    <h2>🔥 Produk Utama - Heartwood Online</h2>
+    <div class="horizontal-scroll" id="featuredProducts"></div>
+  </section>
+
+  <!-- RANDOM PRODUK -->
+  <section>
+    <h2>🎲 Produk Lainnya</h2>
+    <div class="product-grid" id="randomProducts"></div>
+  </section>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>                <div class="hero-cta">
                     <a href="#" class="btn btn-primary anime-btn-pulse" data-section="shop">
                         <i class="fas fa-fire"></i> EXPLORE PRODUCTS
                     </a>
