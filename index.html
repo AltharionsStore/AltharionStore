@@ -3,30 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Altharion Store - Marketplace Item Game</title>
+    <title>🎮 Altharion Store - Anime Game Marketplace</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 </head>
 <body>
+    <!-- Anime Background Elements -->
+    <div class="anime-bg">
+        <div class="floating-symbol">⚡</div>
+        <div class="floating-symbol">🎮</div>
+        <div class="floating-symbol">🛡️</div>
+        <div class="floating-symbol">⚔️</div>
+        <div class="floating-symbol">🎯</div>
+    </div>
+
+    <!-- Neon Glow Container -->
+    <div class="neon-border"></div>
+
     <!-- Header & Navigation -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-gamepad"></i>
-                    <h1>Altharion Store</h1>
+                    <div class="logo-icon">
+                        <i class="fas fa-bolt"></i>
+                        <div class="logo-sparkle"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="logo-main">ALTHARION</h1>
+                        <p class="logo-sub">ANIME GAME STORE</p>
+                    </div>
                 </div>
+                
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
-                        <li><a href="#" class="nav-link" data-section="shop">Shop</a></li>
-                        <li><a href="#" class="nav-link" data-section="service">Service</a></li>
-                        <li><a href="#" class="nav-link" data-section="rules">Rules</a></li>
-                        <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+                        <li><a href="#" class="nav-link active" data-section="home">
+                            <i class="fas fa-home"></i> <span>HOME</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-section="shop">
+                            <i class="fas fa-store"></i> <span>SHOP</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-section="service">
+                            <i class="fas fa-cogs"></i> <span>SERVICE</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-section="rules">
+                            <i class="fas fa-scroll"></i> <span>RULES</span>
+                        </a></li>
+                        <li><a href="#" class="nav-link" data-section="contact">
+                            <i class="fas fa-headset"></i> <span>CONTACT</span>
+                        </a></li>
+                        <li class="nav-highlight">
+                            <a href="#" class="btn-nav-pulse" data-section="shop">
+                                <i class="fas fa-bolt"></i> SHOP NOW
+                            </a>
+                        </li>
                     </ul>
-                    <button class="menu-toggle" id="menuToggle">
-                        <i class="fas fa-bars"></i>
+                    
+                    <button class="menu-toggle anime-btn" id="menuToggle">
+                        <span class="bar bar1"></span>
+                        <span class="bar bar2"></span>
+                        <span class="bar bar3"></span>
                     </button>
                 </nav>
             </div>
@@ -35,6 +73,368 @@
 
     <!-- Main Content -->
     <main class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero anime-slide-up">
+                <div class="hero-badge">
+                    <span class="badge-pulse">🔥 HOT DEALS</span>
+                    <span class="badge-pulse">⚡ INSTANT DELIVERY</span>
+                </div>
+                
+                <h2 class="hero-title anime-text-gradient">
+                    <span class="hero-title-main">UPGRADE YOUR</span>
+                    <span class="hero-title-sub">GAMING EXPERIENCE</span>
+                </h2>
+                
+                <p class="hero-desc">
+                    Premium <span class="text-highlight">Anime Game Accounts</span> • 
+                    <span class="text-highlight">Rare Items</span> • 
+                    <span class="text-highlight">Fast & Secure</span> Delivery
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-card anime-float">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-number" data-count="1500">0</div>
+                        <div class="stat-label">Items Sold</div>
+                    </div>
+                    <div class="stat-card anime-float" style="animation-delay: 0.2s">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-label">Positive Rating</div>
+                    </div>
+                    <div class="stat-card anime-float" style="animation-delay: 0.4s">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-label">Min Delivery</div>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary anime-btn-pulse" data-section="shop">
+                        <i class="fas fa-fire"></i> EXPLORE PRODUCTS
+                    </a>
+                    <a href="#" class="btn btn-secondary anime-btn-glow" data-section="contact">
+                        <i class="fas fa-bolt"></i> NEED HELP?
+                    </a>
+                </div>
+            </div>
+
+            <!-- Featured Products Preview -->
+            <div class="featured-section">
+                <h3 class="section-title anime-slide-left">
+                    <i class="fas fa-crown"></i> FEATURED PRODUCTS
+                </h3>
+                <div class="featured-preview" id="featuredPreview">
+                    <!-- Featured products will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section id="shop" class="section">
+            <div class="section-header anime-slide-up">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">
+                        <i class="fas fa-store-alt"></i> ANIME GAME SHOP
+                    </h2>
+                    <p class="section-subtitle">Find your perfect gaming companion</p>
+                </div>
+                
+                <!-- Filter Categories -->
+                <div class="filter-container">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">
+                            <i class="fas fa-layer-group"></i> ALL
+                        </button>
+                        <button class="filter-tab" data-filter="game">
+                            <i class="fas fa-user-ninja"></i> ACCOUNTS
+                        </button>
+                        <button class="filter-tab" data-filter="item">
+                            <i class="fas fa-gem"></i> ITEMS
+                        </button>
+                        <button class="filter-tab" data-filter="jasa">
+                            <i class="fas fa-wrench"></i> SERVICES
+                        </button>
+                    </div>
+                    
+                    <div class="search-box anime-input-glow">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Search anime games...">
+                        <button class="search-clear" id="searchClear">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Container -->
+            <div class="products-grid" id="productsContainer">
+                <!-- Products will be loaded here via JavaScript -->
+                <div class="loading">
+                    <div class="anime-spinner">
+                        <div class="spinner-circle"></div>
+                        <div class="spinner-text">LOADING ANIME TREASURES...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Tags -->
+            <div class="category-tags">
+                <span class="tag">Genshin Impact</span>
+                <span class="tag">Honkai: Star Rail</span>
+                <span class="tag">Valorant</span>
+                <span class="tag">Mobile Legends</span>
+                <span class="tag">PUBG</span>
+                <span class="tag">FIFA</span>
+                <span class="tag">Steam</span>
+            </div>
+        </section>
+
+        <!-- Service Section -->
+        <section id="service" class="section">
+            <div class="section-header anime-slide-up">
+                <h2 class="section-title">
+                    <i class="fas fa-bolt"></i> PREMIUM SERVICES
+                </h2>
+                <p class="section-subtitle">Level up your gaming with our exclusive services</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card anime-card-float">
+                    <div class="service-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-user-shield"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">MIDMAN PROTECTION</h3>
+                    <p class="service-desc">Secure transactions with trusted middleman service</p>
+                    <div class="service-badge">100% SAFE</div>
+                </div>
+                
+                <div class="service-card anime-card-float" style="animation-delay: 0.1s">
+                    <div class="service-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-rocket"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">INSTANT DELIVERY</h3>
+                    <p class="service-desc">Get your items within minutes after payment</p>
+                    <div class="service-badge">5-15 MIN</div>
+                </div>
+                
+                <div class="service-card anime-card-float" style="animation-delay: 0.2s">
+                    <div class="service-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-headset"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">24/7 SUPPORT</h3>
+                    <p class="service-desc">Round-the-clock customer support for gamers</p>
+                    <div class="service-badge">ALWAYS ONLINE</div>
+                </div>
+                
+                <div class="service-card anime-card-float" style="animation-delay: 0.3s">
+                    <div class="service-icon">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="service-title">ACCOUNT PROTECTION</h3>
+                    <p class="service-desc">Guaranteed account safety and verification</p>
+                    <div class="service-badge">NO BAN</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules" class="section">
+            <div class="section-header anime-slide-up">
+                <h2 class="section-title">
+                    <i class="fas fa-scroll"></i> STORE RULES
+                </h2>
+                <p class="section-subtitle">Read before you purchase</p>
+            </div>
+
+            <div class="rules-container">
+                <div class="rule-card anime-card-slide">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3 class="rule-title">IMPORTANT NOTES</h3>
+                    </div>
+                    <ul class="rule-list">
+                        <li><i class="fas fa-check-circle"></i> Use midman for transactions above Rp 300K</li>
+                        <li><i class="fas fa-check-circle"></i> Digital items = NO REFUND after delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Deal = Agree to terms & conditions</li>
+                        <li><i class="fas fa-check-circle"></i> Negotiate politely and reasonably</li>
+                    </ul>
+                </div>
+                
+                <div class="rule-card anime-card-slide" style="animation-delay: 0.1s">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="rule-title">SAFETY FIRST</h3>
+                    </div>
+                    <ul class="rule-list">
+                        <li><i class="fas fa-check-circle"></i> Never share passwords before deal</li>
+                        <li><i class="fas fa-check-circle"></i> Save transaction proof for 7 days</li>
+                        <li><i class="fas fa-check-circle"></i> Verify WhatsApp numbers before deal</li>
+                        <li><i class="fas fa-check-circle"></i> Report suspicious activity immediately</li>
+                    </ul>
+                </div>
+                
+                <div class="rule-card anime-card-slide" style="animation-delay: 0.2s">
+                    <div class="rule-header">
+                        <div class="rule-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="rule-title">PROCESS TIME</h3>
+                    </div>
+                    <ul class="rule-list">
+                        <li><i class="fas fa-check-circle"></i> Admin response: 10.00 - 22.00 WIB</li>
+                        <li><i class="fas fa-check-circle"></i> Delivery after payment: 5-30 minutes</li>
+                        <li><i class="fas fa-check-circle"></i> Payment confirmation: 1-5 minutes</li>
+                        <li><i class="fas fa-check-circle"></i> Maximum wait time: 24 hours</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header anime-slide-up">
+                <h2 class="section-title">
+                    <i class="fas fa-headset"></i> GET IN TOUCH
+                </h2>
+                <p class="section-subtitle">We're here to help you level up!</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-card anime-card-glow">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h3 class="contact-title">WHATSAPP SUPPORT</h3>
+                    <div class="contact-info">
+                        <p><strong>Midman:</strong> +6281234567890</p>
+                        <p><strong>Admin:</strong> +6289876543210</p>
+                    </div>
+                    <a href="https://wa.me/6281234567890" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> CHAT NOW
+                    </a>
+                </div>
+                
+                <div class="contact-card anime-card-glow" style="animation-delay: 0.2s">
+                    <div class="contact-icon">
+                        <i class="fab fa-telegram"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h3 class="contact-title">TELEGRAM CHANNEL</h3>
+                    <div class="contact-info">
+                        <p>@altharion_store</p>
+                        <p>Join for updates & promos</p>
+                    </div>
+                    <a href="https://t.me/altharion_store" class="btn btn-telegram" target="_blank">
+                        <i class="fab fa-telegram"></i> JOIN CHANNEL
+                    </a>
+                </div>
+                
+                <div class="contact-card anime-card-glow" style="animation-delay: 0.4s">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h3 class="contact-title">OPERATIONAL HOURS</h3>
+                    <div class="contact-info">
+                        <p><strong>Every Day:</strong> 10.00 - 22.00 WIB</p>
+                        <p><strong>Fast Response:</strong> 24/7 via WhatsApp</p>
+                    </div>
+                    <div class="time-indicator">
+                        <div class="status-dot online"></div>
+                        <span class="status-text">ONLINE NOW</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="social-container anime-slide-up">
+                <h4 class="social-title">CONNECT WITH US</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon anime-social-hover">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon anime-social-hover">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" class="social-icon anime-social-hover">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon anime-social-hover">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon small">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="footer-text">
+                        <h3>ALTHARION STORE</h3>
+                        <p>Anime Game Marketplace</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#" data-section="home">HOME</a>
+                    <a href="#" data-section="shop">SHOP</a>
+                    <a href="#" data-section="service">SERVICES</a>
+                    <a href="#" data-section="rules">RULES</a>
+                    <a href="#" data-section="contact">CONTACT</a>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <p>Get gaming deals & updates</p>
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Your email...">
+                        <button class="btn-newsletter">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> ALTHARION STORE - Premium Anime Gaming Marketplace</p>
+                <p class="footer-disclaimer">This is a demo website. All products and contact information are for demonstration purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top anime-btn-float" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+</body>
+</html>    <main class="container">
         <!-- Home Section -->
         <section id="home" class="section active">
             <div class="hero">
