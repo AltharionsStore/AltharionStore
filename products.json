@@ -1,87 +1,19 @@
-{
-  "products": [
-    {
-      "id": 1,
-      "category": "game",
-      "title": "VALORANT RADIANT ACCOUNT",
-      "price": "Rp 850.000",
-      "image": "https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "seller": "+6281234567891",
-      "midman": "+6289876543210",
-      "description": "Radiant rank with ALL EPIC skins - Prime, Oni, Glitchpop. Full access, email changeable.",
-      "featured": true
-    },
-    {
-      "id": 2,
-      "category": "item",
-      "title": "GENSHIN IMPACT CRYSTALS",
-      "price": "Rp 120.000",
-      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "seller": "+6281234567892",
-      "midman": "+6289876543210",
-      "description": "6480 Genesis Crystals + bonus. Instant delivery, safe top-up method.",
-      "featured": true
-    },
-    {
-      "id": 3,
-      "category": "game",
-      "title": "MOBILE LEGENDS MYTHIC",
-      "price": "Rp 450.000",
-      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "seller": "+6281234567893",
-      "midman": "+6289876543210",
-      "description": "Mythic 500+ points, 120+ skins including Legend & Collector. Moonton verified.",
-      "featured": true
-    },
-    {
-      "id": 4,
-      "category": "item",
-      "title": "FIFA ULTIMATE TEAM POINTS",
-      "price": "Rp 650.000",
-      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "seller": "+6281234567894",
-      "midman": "+6289876543210",
-      "description": "4600 FIFA Points for PS5/Xbox/PC. Instant delivery, account login method.",
-      "featured": false
-    },
-    {
-      "id": 5,
-      "category": "jasa",
-      "title": "VALORANT BOOSTING SERVICE",
-      "price": "Rp 300.000",
-      "image": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "seller": "+6281234567895",
-      "midman": "+6289876543210",
-      "description": "Iron to Gold rank boost. Safe, no cheat, guaranteed no ban. 24-48 hours completion.",
-      "featured": false
-    },
-    {
-      "id": 6,
-      "category": "item",
-      "title": "STEAM WALLET ULTIMATE",
-      "price": "Rp 750.000",
-      "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "seller": "+6281234567896",
-      "midman": "+6289876543210",
-      "description": "$50 Steam Wallet Code. Works worldwide, instant code delivery via email.",
-      "featured": true
-    },
-    {
-      "id": 7,
-      "category": "game",
-      "title": "PUBG MOBILE CONQUEROR",
-      "price": "Rp 600.000",
-      "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      "seller": "+6281234567897",
-      "midman": "+6289876543210",
-      "description": "Conqueror rank with legendary skins & 10K+ UC. Full access, safety guaranteed.",
-      "featured": false
-    },
-    {
-      "id": 8,
-      "category": "jasa",
-      "title": "GAME TOP-UP SERVICE",
-      "price": "Rp 50.000",
+[
+  {
+    "title": "Heartwood Gold 1M",
+    "desc": "Fast delivery • Boleh nego asal ngotak",
+    "image": "https://i.imgur.com/example.png",
+    "seller": "628123456789",
+    "featured": true
+  },
+  {
+    "title": "Akun Heartwood LV 80",
+    "desc": "Full set • Aman",
+    "image": "https://i.imgur.com/example.png",
+    "seller": "628987654321",
+    "featured": false
+  }
+]      "price": "Rp 50.000",
       "image": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       "seller": "+6281234567898",
       "midman": "+6289876543210",
