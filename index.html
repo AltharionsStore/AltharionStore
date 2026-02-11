@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Altharion Store | Heartwood Online</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --bg:#0B1220;
+  --card:#121A2F;
+  --buy:#22C55E;
+  --sell:#3B82F6;
+  --mid:#F59E0B;
+  --text:#E5E7EB;
+  --muted:#9CA3AF;
+  --line:#1f2937;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  position:relative;
+}
+a{text-decoration:none;color:inherit}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 20px 0;
+  max-width:900px;
+  margin:0 auto;
+  width:100%;
+  position:relative;
+}
+.logo-area{
+  display:flex;
+  flex-direction:column;
+}
+.logo{
+  font-size:42px;
+  font-weight:800;
+  color:var(--mid);
+  line-height:1;
+}
+.subtitle{
+  color:var(--muted);
+  margin-top:4px;
+  font-size:14px;
+}
+/* HAMBURGER MENU */
+.menu-icon{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  width:30px;
+  height:20px;
+  cursor:pointer;
+  z-index:1001;
+}
+.menu-icon span{
+  width:100%;
+  height:3px;
+  background:var(--text);
+  border-radius:3px;
+  transition:0.3s;
+}
+.menu-dropdown{
+  position:absolute;
+  top:70px;
+  right:20px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  width:200px;
+  padding:12px 0;
+  display:none;
+  flex-direction:column;
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  z-index:1000;
+}
+.menu-dropdown.active{
+  display:flex;
+}
+.menu-item{
+  padding:12px 20px;
+  color:var(--text);
+  font-weight:600;
+  transition:0.2s;
+  cursor:pointer;
+  border-bottom:1px solid var(--line);
+}
+.menu-item:last-child{
+  border-bottom:none;
+}
+.menu-item:hover{
+  background:var(--line);
+  color:white;
+}
+/* OVERLAY UNTUK TUTUP MENU SAAT KLIK DI LUAR */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:transparent;
+  display:none;
+  z-index:999;
+}
+.overlay.active{
+  display:block;
+}
+/* CARD */
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:24px;
+  margin-bottom:24px;
+  border:1px solid var(--line);
+}
+.section-title{
+  font-size:22px;
+  margin-bottom:12px;
+}
+/* BUTTON */
+.btn{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:12px;
+  font-weight:700;
+  margin-top:14px;
+}
+.buy{background:var(--buy);color:#000}
+.sell{background:var(--sell)}
+.mid{background:var(--mid);color:#000}
+/* TOGGLE */
+.toggle{
+  display:flex;
+  border-radius:12px;
+  overflow:hidden;
+  margin-top:12px;
+}
+.toggle button{
+  flex:1;
+  padding:14px;
+  font-weight:800;
+  border:none;
+  cursor:pointer;
+  background:#1f2937;
+  color:var(--text);
+  transition:0.2s;
+}
+.toggle .active-buy{
+  background:var(--buy);
+  color:#000;
+}
+.toggle .active-sell{
+  background:var(--sell);
+  color:#fff;
+}
+/* INPUT */
+input{
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  margin-top:12px;
+  font-size:16px;
+}
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:14px;
+  font-size:14px;
+}
+th,td{
+  padding:10px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+th{
+  color:var(--muted);
+}
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px 10px;
+  color:var(--muted);
+  font-size:14px;
+}
+/* HIDE ELEMENT */
+.hidden{
+  display:none !important;
+}
+/* ---------- PAGE RULES ---------- */
+.rules-content, .testimonial-content{
+  padding:0;
+}
+.rule-list{
+  list-style:none;
+  padding:0;
+}
+.rule-list li{
+  padding:12px 0;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+.rule-list li:last-child{
+  border-bottom:none;
+}
+.rule-icon{
+  font-size:20px;
+}
+/* ---------- TESTIMONIAL DENGAN PROTEKSI ---------- */
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:16px;
+}
+.testimonial-item{
+  background:var(--bg);
+  border-radius:12px;
+  padding:12px;
+  border:1px solid var(--line);
+}
+.testimonial-img-container{
+  position:relative;
+  width:100%;
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:8px;
+}
+/* Proteksi gambar: tidak bisa di-drag, tidak bisa klik kanan, tidak bisa diunduh */
+.protected-img{
+  width:100%;
+  height:auto;
+  display:block;
+  pointer-events:none;        /* Mencegah klik kanan & drag */
+  user-select:none;           /* Mencegah seleksi */
+  -webkit-user-drag:none;    /* Mencegah drag di Webkit */
+  -webkit-touch-callout:none; /* Mencegah callout di iOS */
+  pointer-events:none;       /* Ganda untuk jaga-jaga */
+  filter:brightness(0.95);   /* Kesan gelap, menambah keamanan visual? */
+}
+/* Lapisan transparan di atas gambar untuk mencegah klik kanan pada area kosong sekalipun */
+.img-shield{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:transparent;
+  z-index:5;
+  cursor:default;
+}
+.testimonial-item p{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:6px;
+  text-align:center;
+}
+/* untuk mode responsif */
+@media (max-width:600px){
+  .testimonial-grid{
+    grid-template-columns:1fr;
+  }
+  .container{
+    padding:16px;
+  }
+  header{
+    padding:16px 16px 0;
+  }
+}
+/* Chat WA fixed */
+.wafixed{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#22C55E;
+  color:#000;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:800;
+  z-index:9999;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER DENGAN HAMBURGER MENU -->
+<header>
+  <div class="logo-area">
+    <div class="logo">👑 AS</div>
+    <p class="subtitle">Heartwood Online</p>
+  </div>
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <!-- DROPDOWN MENU -->
+  <div class="menu-dropdown" id="menuDropdown">
+    <div class="menu-item" data-page="home">🏠 Utama</div>
+    <div class="menu-item" data-page="rules">📜 Rules</div>
+    <div class="menu-item" data-page="testimonial">🖼️ Testimoni</div>
+  </div>
+</header>
+
+<!-- OVERLAY UNTUK MENUTUP MENU -->
+<div class="overlay" id="overlay"></div>
+
+<div class="container">
+
+  <!-- ========== HALAMAN UTAMA (SHOP) ========== -->
+  <div id="home-content">
+    <!-- TRUST -->
+    <div class="card">
+      <div class="section-title">✅ TRUST STATUS</div>
+      <p class="subtitle">
+        🟢 Online & Aktif<br>
+        🔒 Trusted Trader<br>
+        ⚡ Fast Response
+      </p>
+    </div>
+
+    <!-- CALCULATOR -->
+    <div class="card">
+      <div class="section-title">🧮 GOLD CALCULATOR</div>
+      <div class="toggle">
+        <button id="buyBtn">BUY GOLD</button>
+        <button id="sellBtn" class="active-sell">SELL GOLD</button>
+      </div>
+      <input type="number" id="goldInput" placeholder="Masukkan jumlah gold (contoh: 50000)">
+      <p id="modeText" class="subtitle">Mode SELL: Player menjual gold ke Altharion</p>
+      <p id="calcResult" class="subtitle" style="font-weight:700"></p>
+    </div>
+
+    <!-- LIST SELL (default tampil) -->
+    <div class="card" id="sellListCard">
+      <div class="section-title">💰 SELL GOLD</div> 
+      <p class="subtitle">Jual Gold ke Altharion</p>
+      <table>
+        <tr><th>Jumlah Gold</th><th>Harga</th><th>Rate</th></tr>
+        <tr><td>10k Gold</td><td>Rp 4.800</td><td>0,48</td></tr>
+        <tr><td>20k Gold</td><td>Rp 9.600</td><td>0,48</td></tr>
+        <tr><td>30k Gold</td><td>Rp 14.400</td><td>0,48</td></tr>
+        <tr><td>40k Gold</td><td>Rp 19.200</td><td>0,48</td></tr>
+        <tr><td>50k Gold</td><td>Rp 25.000</td><td>0,50</td></tr>
+        <tr><td>100k Gold</td><td>Rp 52.000</td><td>0,52</td></tr>
+      </table>
+      <a class="btn sell" href="https://wa.me/6287883100382?text=Halo%20saya%20mau%20JUAL%20gold%20Heartwood">Jual Gold</a>
+    </div>
+
+    <!-- LIST BUY (default tersembunyi) -->
+    <div class="card hidden" id="buyListCard">
+      <div class="section-title">🛒 BUY GOLD</div>
+      <p class="subtitle">Beli Gold di Altharion</p>
+      <table>
+        <tr><th>Jumlah Gold</th><th>Harga</th><th>Rate</th></tr>
+        <tr><td>10k Gold</td><td>Rp 6.000</td><td>0,60</td></tr>
+        <tr><td>20k Gold</td><td>Rp 12.000</td><td>0,60</td></tr>
+        <tr><td>30k Gold</td><td>Rp 18.000</td><td>0,60</td></tr>
+        <tr><td>40k Gold</td><td>Rp 24.000</td><td>0,60</td></tr>
+        <tr><td>50k Gold</td><td>Rp 28.500</td><td>0,57</td></tr>
+        <tr><td>100k Gold</td><td>Rp 55.000</td><td>0,55</td></tr>
+      </table>
+      <a class="btn buy" href="https://wa.me/6287883100382?text=Halo%20saya%20mau%20BELI%20gold%20Heartwood">Beli Gold</a>
+    </div>
+
+    <!-- MIDMAN -->
+    <div class="card">
+      <div class="section-title">👑 OPEN MIDMAN</div>
+      <p class="subtitle">
+        00k–20k → Fee 1k<br>
+        21k–50k → Fee 2k<br>
+        51k–99k → Fee 3k<br>
+        &gt;100k → By agreement
+      </p>
+      <a class="btn mid" href="https://wa.me/6287883100382">Gunakan Midman</a>
+    </div>
+  </div> <!-- akhir home-content -->
+
+  <!-- ========== HALAMAN RULES (AWALNYA HIDDEN) ========== -->
+  <div id="rules-content" class="hidden rules-content">
+    <div class="card">
+      <div class="section-title">📜 RULES & KETENTUAN</div>
+      <p class="subtitle" style="margin-bottom:16px;">Pedoman transaksi Altharion Store</p>
+      <ul class="rule-list">
+        <li><span class="rule-icon">🔹</span> Semua transaksi menggunakan Rupiah (IDR) via transfer bank/E-Wallet.</li>
+        <li><span class="rule-icon">🔹</span> Gold dikirim langsung di Heartwood Online via trade.  </li>
+        <li><span class="rule-icon">🔹</span> Untuk pembelian  demi keamanan wajib menggunakan sistem bertahap atau midman.</li>
+        <li><span class="rule-icon">🔹</span> saat trade jual beli gold selalu masukkan sampah/item kecil, menghindari deteksi RMT.</li>
+        <li><span class="rule-icon">🔹</span> Pelayanan 24/7, tapi respon tergantung kesibukan Admin.</li>
+        <li><span class="rule-icon">🔹</span> Dilarang chargeback atau pembatalan sepihak.</li>
+        <li><span class="rule-icon">🔹</span> Dengan bertransaksi, berarti Anda setuju dengan rules ini.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="section-title">⏰ PROSES TRANSAKSI</div>
+      <p class="subtitle">
+        1. Hubungi via WA dengan format jelas.<br>
+        2. cek rate harga Gunakan Callculatur atau chat langsung.<br>
+        3. Admin memberikan total harga dan instruksi pembayaran.<br>
+        4. Setelah pembayaran lunas, admin kirim gold dalam hitungan menit.<br>
+        5. Konfirmasi diterima, transaksi selesai.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========== HALAMAN TESTIMONI (AWALNYA HIDDEN) ========== -->
+  <div id="testimonial-content" class="hidden testimonial-content">
+    <div class="card">
+      <div class="section-title">🖼️ TESTIMONI & BUKTI TRANSFER</div>
+      <p class="subtitle">Beberapa screenshoot transaksi dari customer (dilindungi dari unduh & screenshot)</p>
+      
+      <div class="testimonial-grid">
+        <!-- Testimoni 1 -->
+        <div class="testimonial-item">
+          <div class="testimonial-img-container">
+            <!-- Gambar dummy, ganti dengan link foto asli nanti -->
+            <img src="https://placehold.co/400x300/1f2937/E5E7EB?text=Transaksi+100k+Gold" 
+                 alt="Testi 1" 
+                 class="protected-img"
+                 oncontextmenu="return false;">
+            <div class="img-shield"></div>
+          </div>
+          <p>⭐ 5.0 • Beli 100k Gold • Rp55.000</p>
+        </div>
+        <!-- Testimoni 2 -->
+        <div class="testimonial-item">
+          <div class="testimonial-img-container">
+            <img src="https://placehold.co/400x300/1f2937/E5E7EB?text=Jual+50k+Gold" 
+                 alt="Testi 2"
+                 class="protected-img"
+                 oncontextmenu="return false;">
+            <div class="img-shield"></div>
+          </div>
+          <p>⭐ 4.8 • Jual 50k Gold • Rp25.000</p>
+        </div>
+        <!-- Testimoni 3 -->
+        <div class="testimonial-item">
+          <div class="testimonial-img-container">
+            <img src="https://placehold.co/400x300/1f2937/E5E7EB?text=Midman+20k+Gold" 
+                 alt="Testi 3"
+                 class="protected-img"
+                 oncontextmenu="return false;">
+            <div class="img-shield"></div>
+          </div>
+          <p>⭐ 5.0 • Midman 20k Gold • Fee 2k</p>
+        </div>
+        <!-- Testimoni 4 -->
+        <div class="testimonial-item">
+          <div class="testimonial-img-container">
+            <img src="https://placehold.co/400x300/1f2937/E5E7EB?text=Beli+30k+Gold" 
+                 alt="Testi 4"
+                 class="protected-img"
+                 oncontextmenu="return false;">
+            <div class="img-shield"></div>
+          </div>
+          <p>⭐ 4.9 • Beli 30k Gold • Rp18.000</p>
+        </div>
+      </div>
+      <p style="margin-top:20px; font-style:italic; color:var(--muted); text-align:center;">
+        * Screenshot dilindungi. Tidak dapat diunduh maupun di-screenshot.
+      </p>
+    </div>
+  </div>
+
+</div> <!-- akhir container -->
+
+<footer>
+  Altharion Store ©<br>
+  Heartwood Online Only<br>
+  WhatsApp: +6287883100382
+  <p style="font-size:12px;margin-top:10px">
+    Disclaimer: Tidak berafiliasi resmi dengan Heartwood Online
+  </p>
+</footer>
+
+<a href="https://wa.me/6287883100382" class="wafixed">
+  💬 Chat WA
+</a>
+
+<script>
+// ========== GLOBAL STATE ==========
+let mode = "sell"; // default SELL
+
+// ========== ELEMEN DOM ==========
+// Navigasi
+const menuIcon = document.getElementById('menuIcon');
+const menuDropdown = document.getElementById('menuDropdown');
+const overlay = document.getElementById('overlay');
+const menuItems = document.querySelectorAll('.menu-item');
+const homeContent = document.getElementById('home-content');
+const rulesContent = document.getElementById('rules-content');
+const testimonialContent = document.getElementById('testimonial-content');
+
+// Kalkulator & toggle
+const buyBtn = document.getElementById("buyBtn");
+const sellBtn = document.getElementById("sellBtn");
+const goldInput = document.getElementById("goldInput");
+const result = document.getElementById("calcResult");
+const modeText = document.getElementById("modeText");
+const sellListCard = document.getElementById("sellListCard");
+const buyListCard = document.getElementById("buyListCard");
+
+// ========== FUNGSI NAVIGASI ==========
+function closeMenu(){
+  menuDropdown.classList.remove('active');
+  overlay.classList.remove('active');
+}
+
+function openMenu(){
+  menuDropdown.classList.add('active');
+  overlay.classList.add('active');
+}
+
+// Toggle menu saat icon diklik
+menuIcon.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if(menuDropdown.classList.contains('active')){
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+// Tutup menu saat klik overlay
+overlay.addEventListener('click', closeMenu);
+
+// Pindah halaman
+function navigateTo(page){
+  // Sembunyikan semua halaman
+  homeContent.classList.add('hidden');
+  rulesContent.classList.add('hidden');
+  testimonialContent.classList.add('hidden');
+  
+  // Tampilkan halaman yang dipilih
+  if(page === 'home'){
+    homeContent.classList.remove('hidden');
+  } else if(page === 'rules'){
+    rulesContent.classList.remove('hidden');
+  } else if(page === 'testimonial'){
+    testimonialContent.classList.remove('hidden');
+  }
+  
+  // Tutup menu
+  closeMenu();
+}
+
+// Event listener untuk menu items
+menuItems.forEach(item => {
+  item.addEventListener('click', function(){
+    const page = this.dataset.page;
+    navigateTo(page);
+  });
+});
+
+// ========== FUNGSI KALKULATOR & TOGGLE (SAMA SEPERTI SEBELUMNYA) ==========
+function updateListVisibility() {
+  if (mode === "sell") {
+    sellListCard.classList.remove("hidden");
+    buyListCard.classList.add("hidden");
+  } else {
+    sellListCard.classList.add("hidden");
+    buyListCard.classList.remove("hidden");
+  }
+}
+
+function calculate() {
+  const gold = parseInt(goldInput.value);
+  if (isNaN(gold) || gold <= 0) {
+    result.innerText = "";
+    return;
+  }
+  let rate = 0;
+  if (mode === "sell") {
+    if (gold < 50000) rate = 0.48;
+    else if (gold < 100000) rate = 0.50;
+    else rate = 0.52;
+  } else {
+    if (gold < 50000) rate = 0.60;
+    else if (gold < 100000) rate = 0.57;
+    else rate = 0.55;
+  }
+  const total = gold * rate;
+  result.innerText = `Rate ${rate} | Estimasi Total: Rp ${total.toLocaleString("id-ID")}`;
+}
+
+function switchToBuyMode() {
+  mode = "buy";
+  buyBtn.classList.add("active-buy");
+  sellBtn.classList.remove("active-sell");
+  modeText.innerText = "Mode BUY: Player membeli gold dari Altharion";
+  updateListVisibility();
+  calculate();
+}
+
+function switchToSellMode() {
+  mode = "sell";
+  sellBtn.classList.add("active-sell");
+  buyBtn.classList.remove("active-buy");
+  modeText.innerText = "Mode SELL: Player menjual gold ke Altharion";
+  updateListVisibility();
+  calculate();
+}
+
+// ========== INISIALISASI ==========
+function init() {
+  // Navigasi: default halaman home (sudah tidak hidden)
+  homeContent.classList.remove('hidden');
+  rulesContent.classList.add('hidden');
+  testimonialContent.classList.add('hidden');
+  
+  // Toggle default SELL
+  switchToSellMode();
+  
+  // Event listeners toggle
+  buyBtn.addEventListener("click", switchToBuyMode);
+  sellBtn.addEventListener("click", switchToSellMode);
+  goldInput.addEventListener("input", calculate);
+  
+  // Proteksi tambahan untuk gambar testimoni (jaga-jaga disable drag & context menu)
+  const imgs = document.querySelectorAll('.protected-img');
+  imgs.forEach(img => {
+    img.addEventListener('contextmenu', (e) => e.preventDefault());
+    img.addEventListener('dragstart', (e) => e.preventDefault());
+  });
+}
+
+// Jalankan setelah DOM siap
+document.addEventListener("DOMContentLoaded", init);
+</script>
+
+</body>
+</html>
