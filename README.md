@@ -1,2 +1,1 @@
-# AltharionStore
-Link:https://altharionsstore.github.io/AltharionStore/
+Halaman Utama shop 
